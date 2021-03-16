@@ -1,0 +1,25 @@
+server {
+  listen 80;
+  server_name {{extURL}};
+  location /.well-known {
+        alias /usr/share/nginx/html/.well-known;
+   }
+  location / {
+        proxy_pass http://{{intURL}};
+        return 301 https://$server_name$request_uri;
+  }
+}
+
+server {
+    listen              443 ssl;
+    server_name         {{extURL}};
+
+    client_max_body_size 2G;
+    add_header Strict-Transport-Security "max-age=31536000;";
+    ssl_certificate     /etc/letsencrypt/live/{{extURL}}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{extURL}}/privkey.pem;
+    location / {
+        proxy_pass http://{{intURL}};
+        proxy_request_buffering off;
+    }
+}
