@@ -12,4 +12,7 @@ VOLUME /etc/nginx/conf.d/
 VOLUME /etc/letsencrypt/
 
 RUN apt update && \
-apt install -y certbot
+apt install -y certbot && \
+chmod +x /root/bin/add.sh
+
+WORKDIR /root/bin
