@@ -3,7 +3,7 @@ FROM nginx
 EXPOSE 80
 EXPOSE 443
 
-ENV email
+ENV email=nobody@someplace.com
 
 COPY template.sample_conf /etc/nginx/conf.d/
 COPY add.sh /root/bin/
