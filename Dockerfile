@@ -6,6 +6,7 @@ EXPOSE 443
 ENV email=nobody@someplace.com
 
 COPY template.sample_conf /etc/nginx/conf.d/
+COPY temp.sample_conf /etc/nginx/conf.d/
 COPY add.sh /root/bin/
 
 VOLUME /etc/nginx/conf.d/
