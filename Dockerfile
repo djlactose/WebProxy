@@ -8,6 +8,7 @@ ENV email=nobody@someplace.com
 COPY template.sample_conf /etc/nginx/conf.d/
 COPY temp.sample_conf /etc/nginx/conf.d/
 COPY add.sh /root/bin/
+COPY run.sh /root/bin/
 
 VOLUME /etc/nginx/conf.d/
 VOLUME /etc/letsencrypt/
@@ -17,3 +18,5 @@ apt install -y certbot && \
 chmod +x /root/bin/add.sh
 
 WORKDIR /root/bin
+
+ENTRYPOINT /root/bin/run.sh
