@@ -1,2 +1,3 @@
 certbot renew
-nginx -g 'daemon off;'
+nginx 
+tail -f /dev/random
