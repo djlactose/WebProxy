@@ -5,8 +5,8 @@ EXPOSE 443
 
 ENV email=nobody@someplace.com
 
-COPY template.sample_conf /etc/nginx/conf.d/
-COPY temp.sample_conf /etc/nginx/conf.d/
+COPY template.sample_conf /root/bin/
+COPY temp.sample_conf /root/bin/
 COPY add.sh /root/bin/
 COPY run.sh /root/bin/
 
