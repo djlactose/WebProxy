@@ -20,4 +20,6 @@ chmod +x /root/bin/add.sh
 
 WORKDIR /root/bin
 
+HEALTHCHECK CMD curl --fail http://localhost || exit 1
+
 ENTRYPOINT /root/bin/run.sh
