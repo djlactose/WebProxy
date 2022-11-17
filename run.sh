@@ -1,3 +1,4 @@
 nginx 
 certbot renew
-tail -f /dev/random
+nginx -s reload
+sleep infinity
