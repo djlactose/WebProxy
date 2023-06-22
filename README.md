@@ -1,16 +1,16 @@
 # WebProxy
-##Volumes
+## Volumes
 NGINX Configs
-'/etc/nginx/conf.d/
+' /etc/nginx/conf.d/
 Certificates
-'/etc/letsencrypt/
+' /etc/letsencrypt/
 
-##Ports
+## Ports
 Needed for renewing through LetsEncrypt
-'80/tcp
+' 80/tcp
 This is used to access the website
-'443/tcp
+' 443/tcp
 
-##ENV
+## ENV
 This email is used to register the domain with letsEncrypt
-'email
+' email
