@@ -1,7 +1,6 @@
 if [ ! -f /etc/nginx/conf.d/default.conf ]
 then
-    cp /root/bin/temp.sample_conf /etc/nginx/conf.d/default.conf
-    sed -i s/{{extURL}}/localhost/g /etc/nginx/conf.d/default.conf
+    cp /root/bin/default.conf /etc/nginx/conf.d/default.conf
 fi
 nginx 
 while [ 1 -eq 1 ]
